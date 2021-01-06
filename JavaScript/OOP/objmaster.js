@@ -27,28 +27,18 @@ const pokémon = Object.freeze([
   // an array of pokémon objects where the id is evenly divisible by 3
   const id_divisble_3 = pokémon.filter( p => p.id % 3 === 0 );
   // an array of pokémon objects that are "fire" type
-  const fire_type = pokémon.filter( p => p.types[0] === "fire" || p.types[1] === "fire" );
+  const fire_type = pokémon.filter( p => p.types.includes("fire") );
   // an array of pokémon objects that have more than one type
-  const two_type = pokémon.filter( p => p.types.length > 1);
+  const two_type = pokémon.filter( p =>  p.types.length > 1);
   // an array with just the names of the pokémon
-  const pokémon_name = pokémon.filter( p => !p.types);
+  const pokémon_name = pokémon.map( p => p.name);
   // an array with just the names of pokémon with an id greater than 99
-  const id_gt_99 = pokémon.filter( p => p.id > 99);
+  const id_gt_99 = pokémon.filter( p => p.id > 99).map(p => p.name);
   // an array with just the names of the pokémon whose only type is poison
   const poison_type = pokémon.filter( p => p.types[0] === "poison" && p.types.length === 1 );
   // an array containing just the first type of all the pokémon whose second type is "flying"
-  const first_type = pokémon.filter(p => {
-    if (p.types[1] ==="flying"){
-      return p.types[0];
-    }
-  });
-
+  const first_type = pokémon.filter(p => p.types[1] ==="flying").map(p => p.types[0]);
   // a count of the number of pokémon that are "normal" type
-const count_normal = pokémon.filter(p=> {
-  let count = 0;
-  if(p.types[0] === "normal" || p.types[1] === "normal") {
-    count += 1;
-  }
-  return count;
-}).length ;
+  const count_normal = pokémon.filter(p => p.types.includes("normal")).length;
+
 
