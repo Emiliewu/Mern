@@ -1,0 +1,36 @@
+.pokemon {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+.sprite {
+  width: 110px;
+  height: 110px;
+  border-radius: 5%;
+  box-shadow: 0 0 2px rgb(177, 177, 177);
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+.sprite img {
+  width: 100%;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  transition: 200ms ease-in 100ms;
+}
+.sprite img:hover {
+  transform: scale(1.09);
+  transition: 220ms ease-out 200ms;
+}
+.pokemon small {
+  color: #919191;
+  font-weight: bold;
+  padding-left: 12px;
+}
+.pokemon > p {
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding-left: 12px;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
